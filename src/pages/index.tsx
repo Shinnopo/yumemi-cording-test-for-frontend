@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { NextPage } from 'next'
 import React, { useEffect, useState } from 'react'
+import CheckField from '@/components/CheckField'
 
 const Home: NextPage = () => {
   const [pref, setPref] = useState<{
@@ -20,12 +21,17 @@ const Home: NextPage = () => {
         headers: { 'X-API-KEY': process.env.NEXT_PUBLIC_API_KEY },
       })
       .then((results) => {
-        setPreFectures(results.data)
+        setPref(results.data)
       })
       .catch((error) => {})
   }, [])
 
-  return <main></main>
+  return (
+    <main>
+      <h2>都道府県</h2>
+      {pref && <CheckField pref={pref.result} />}
+    </main>
+  )
 }
 
 export default Home
