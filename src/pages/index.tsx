@@ -1,24 +1,31 @@
 import axios from 'axios'
-import type { NextPage } from 'next'
-import useSWR from 'swr'
-import styles from '../styles/Home.module.css'
-
-const fetcher = (url: string) =>
-  axios
-    .get(url, { headers: { 'X-API-KEY': process.env.NEXT_PUBLIC_API_KEY } })
-    .then((res) => res.data)
+import { NextPage } from 'next'
+import React, { useEffect, useState } from 'react'
 
 const Home: NextPage = () => {
-  const { data, error } = useSWR('https://opendata.resas-portal.go.jp/api/v1/prefectures', fetcher)
+  const [pref, setPref] = useState<{
+    message: null
+    result: {
+      prefCode: number
+      prefName: string
+    }[]
+  } | null>(null)
+  const [prefPop, setPrefPop] = useState<
+    { prefName: string; data: { year: number; value: number }[] }[]
+  >([])
 
-  if (error) return <div>failed to load</div>
-  if (!data) return <div>loading...</div>
+  useEffect(() => {
+    axios
+      .get('https://opendata.resas-portal.go.jp/api/v1/prefectures', {
+        headers: { 'X-API-KEY': process.env.NEXT_PUBLIC_API_KEY },
+      })
+      .then((results) => {
+        setPreFectures(results.data)
+      })
+      .catch((error) => {})
+  }, [])
 
-  return (
-    <div className={styles.container}>
-      <main className={styles.main}></main>
-    </div>
-  )
+  return <main></main>
 }
 
 export default Home
