@@ -18,13 +18,7 @@ const CheckField: React.FC<Props> = ({ pref, onChange }) => {
       <div>
         {pref.map((pref) => (
           <div key={pref.prefName}>
-            <CheckBox
-              prefName={pref.prefName}
-              prefCode={pref.prefCode}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                onChange(pref.prefName, pref.prefCode, e.target.checked)
-              }
-            />
+            <CheckBox prefName={pref.prefName} prefCode={pref.prefCode} onChange={onChange} />
             <Label prefName={pref.prefName} prefCode={pref.prefCode} />
           </div>
         ))}
