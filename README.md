@@ -38,28 +38,21 @@ $ yarn start
   https://github.com/Shinnopo/yumemi-cording-test-for-frontend
 
 - 課題の取り組み開始から完了までに要した合計時間
-  20h
+  - 20h
 
 - これまでの総合的なプログラミング歴
-  JavaScript 5years
-  TypeScript 2years
-  Python 5years
-  Ruby 2years
-  C# 2years
+  - JavaScript 5years
+  - TypeScript 2years
+  - Python 5years
+  - Ruby 2years
+  - C# 2years
 
 - これまでの WEB フロントエンドプログラミング歴
-  React/Next 1years
-  Vue/Nuxt 2years
+  - React/Next 1years
+  - Vue/Nuxt 2years
 
-ソフトバンクロボティクス株式会社 社内向け Web アプリケーション開発, コーポレートサイトコーディング / React
-株式会社 hacomono 自社プロダクト開発 / Nuxt
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- ソフトバンクロボティクス株式会社 社内向け Web アプリケーション開発, コーポレートサイトコーディング / React
+- 株式会社 hacomono 自社プロダクト開発 / Nuxt
 
 ## Deploy on Vercel
 
