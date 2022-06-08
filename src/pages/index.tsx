@@ -2,6 +2,7 @@ import axios from 'axios'
 import { NextPage } from 'next'
 import React, { useEffect, useState } from 'react'
 import CheckField from '@/components/CheckField'
+import Graph from '@/components/Graph'
 
 const Home: NextPage = () => {
   const [pref, setPref] = useState<{
@@ -46,6 +47,8 @@ const Home: NextPage = () => {
             prefName: prefName,
             data: results.data.result.data[0].data,
           })
+
+          setPrefPop(clickPrefPop)
         })
         .catch((error) => {
           return
@@ -63,6 +66,7 @@ const Home: NextPage = () => {
       <h2>都道府県</h2>
       {pref && <CheckField pref={pref.result} onChange={handleClickCheck} />}
       <h2></h2>
+      <Graph popData={prefPop} />
     </main>
   )
 }
