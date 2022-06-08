@@ -1,6 +1,4 @@
 import React from 'react'
-import CheckBox from './common/CheckBox'
-import Label from './common/Label'
 
 type Props = {
   pref:
