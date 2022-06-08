@@ -4,6 +4,15 @@ import React, { useEffect, useState } from 'react'
 import CheckField from '@/components/CheckField'
 import Graph from '@/components/Graph'
 
+const Styles: { [key: string]: React.CSSProperties } = {
+  main: {
+    background: '#e0e0e0',
+  },
+  title: {
+    textAlign: 'center',
+  },
+}
+
 const Home: NextPage = () => {
   const [pref, setPref] = useState<{
     message: null
@@ -62,10 +71,9 @@ const Home: NextPage = () => {
   }
 
   return (
-    <main>
-      <h2>都道府県</h2>
+    <main style={Styles.main}>
+      <h2 style={Styles.title}>都道府県</h2>
       {pref && <CheckField pref={pref.result} onChange={handleClickCheck} />}
-      <h2></h2>
       <Graph popData={prefPop} />
     </main>
   )
